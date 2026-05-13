@@ -22,8 +22,7 @@ Three independent estimation methods are provided:
 - **`McRaeThomson`** — daytime midlatitude polynomial fits in signed
   solar zenith angle, after McRae & Thomson (2000).
 - **`Ferguson`** — empirical fit of `(h', β)` to geographic latitude,
-  solar zenith angle, and month, after Ferguson (1980), with the +0.15
-  km⁻¹ correction to `β` for the Wait/LongwaveModePropagator convention.
+  solar zenith angle, and month, after Ferguson (1980).
 
 ## Installation
 
