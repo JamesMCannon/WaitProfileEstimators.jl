@@ -1,16 +1,24 @@
 """
-    FIRIFit(; zrange_km=(60.0, 90.0), f10_7=(75, 200))
+    FIRIFit(; zrange_km = (60.0, 90.0), f10_7 = (75, 200))
 
 Estimation method that samples a FIRI (Faraday International Reference
-Ionosphere) electron density profile at the given location/time and fits
-Wait & Spies (h′, β) by OLS on `log(Ne)` vs. altitude over `zrange_km`.
+Ionosphere) electron density profile at the given location and time and
+fits Wait & Spies `(h', β)` by ordinary least squares (OLS) on `log(Ne)` vs.
+altitude over `zrange_km`.
 
-Southern-hemisphere inputs are handled by mirroring latitude and shifting
-month by six (per Friedrich et al. 2018), since FIRI is northern-only.
+Southern-hemisphere inputs are handled by mirroring latitude across the
+equator and shifting the month by six, per Friedrich et al. (2018).
 
 # Keyword arguments
 - `zrange_km`: altitude window (km) for the OLS fit. Default `(60.0, 90.0)`.
 - `f10_7`: F10.7 solar flux range passed to FIRI. Default `(75, 200)`.
+
+# Reference
+Friedrich, M., Pock, C., & Torkar, K. (2018). FIRI-2018, an updated
+empirical model of the lower ionosphere. *J. Geophys. Res. Space Physics*
+123, 6737–6751.
+
+See also: [`hprime_beta`](@ref), [`McRaeThomson`](@ref), [`Ferguson`](@ref).
 """
 Base.@kwdef struct FIRIFit <: WaitProfileMethod
     zrange_km::Tuple{Float64,Float64} = (60.0, 90.0)

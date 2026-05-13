@@ -1,14 +1,20 @@
 """
     Ferguson()
 
-Ferguson (1980) empirical D-region ionosphere fit. The returned β
-includes the +0.15 km⁻¹ correction to the Wait/LongwaveModePropagator
-convention. Higher-order terms (sunspot number, magnetic absorption)
-are ignored.
+Empirical Wait & Spies parameters `(h', β)` from a fit in geographic
+latitude, solar zenith angle, and month, after Ferguson (1980). The
+returned `β` includes the +0.15 km⁻¹ correction to the
+Wait/LongwaveModePropagator convention.
+
+# Notes
+Higher-order terms of the original report (sunspot number, magnetic
+absorption) are not included.
 
 # Reference
-Ferguson, J.A., 1980. Ionospheric profiles for predicting nighttime
-VLF/LF propagation. NOSC/TR-530.
+Ferguson, J. A. (1980). *Ionospheric profiles for predicting nighttime
+VLF/LF propagation* (NOSC/TR-530). Naval Ocean Systems Center.
+
+See also: [`hprime_beta`](@ref), [`FIRIFit`](@ref), [`McRaeThomson`](@ref).
 """
 struct Ferguson <: WaitProfileMethod end
 
