@@ -1,0 +1,5 @@
+[deps]
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+FaradayInternationalReferenceIonosphere = "13f5a3bc-1e41-4c76-a7e5-29a214aba9ea"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+WaitProfileEstimators = "396636b3-103e-4ec1-bf9c-f09d60477106"
