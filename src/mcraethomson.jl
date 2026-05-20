@@ -7,10 +7,10 @@ McRae & Thomson (2000) polynomial fits in *signed* solar zenith angle
 finite-differencing the zenith angle across a one-minute interval.
 
 # Validity
-Calibrated near solar minimum for `|χ| ≲ 98°` (≈ 1.71 rad). Inputs
+Calibrated near solar minimum for `|χ| ≲ 75°` (≈ 1.71 rad). Inputs
 outside this range cause the polynomials to extrapolate and produce
 values that should not be trusted; night is not represented. Calls with
-`|χ| > 98°` emit a one-time warning per call site, but a value is still
+`|χ| > 75°` emit a one-time warning per call site, but a value is still
 returned — the caller is responsible for restricting use to the valid
 range.
 
@@ -22,7 +22,7 @@ See also: [`hprime_beta`](@ref), [`FIRIFit`](@ref), [`Ferguson`](@ref).
 """
 struct McRaeThomson <: WaitProfileMethod end
 
-const MCRAETHOMSON_CHI_LIMIT_DEG = 98.0
+const MCRAETHOMSON_CHI_LIMIT_DEG = 75.0
 
 function _mcraethomson_poly(chi_rad::Real)
     X = chi_rad
